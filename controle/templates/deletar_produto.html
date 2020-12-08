@@ -1,0 +1,48 @@
+{%load static%}    
+
+
+<html>
+
+<head>
+
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+   
+   
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet">
+   
+        <title> Deletar Produto</title>
+      
+       
+    </head>
+    <body>
+        <form method="POST">
+            {%csrf_token%}
+
+         <h2> Tem certeza que deseja remover "{{produto.Descrição}}" ? </h2>
+       
+         {%if produto%}
+
+         <button type="submit" > Deletar Este item </button>
+        
+        
+         {%endif%}
+          
+     
+         <style>
+             button{
+             font-family: 'lobster';
+             color: tomato;
+             }
+
+             h2{
+                font-family: 'lobster';
+             }
+         </style>
+
+        </form>
+
+        <a class="btn btn float-right" href="/">Página inicial &larr;</a>
+
+
+    </body>
+</html>

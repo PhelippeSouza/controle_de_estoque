@@ -1,0 +1,81 @@
+
+   {%block content %}
+   {%load static %}
+ 
+<html>
+
+    <img src="{% static 'img/intimo.jpeg' %}" alt="Minha Figura">	
+  
+    {%endblock%}
+
+   
+    <head>
+
+
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+   
+   
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet">
+   
+        {%if user.is_authenticated %}
+        <title> Lista de Produto</title>
+        {%for produto in produto%}
+
+        <a href="{%url 'update_produto' produto.id%}">
+
+        <li>{{produto.Descrição}}</li>
+       
+        {%endfor%}
+
+
+    </head>
+    <body>
+    
+<a href="produto-form.html" class="btn btn-primary">Novo Produto </a>
+       
+{%else%}
+
+        <a href="/accounts/login">Entrar</a>
+        
+        
+        
+        {%endif%}
+
+
+
+        {%if user.is_authenticated %}
+        <a href="/accounts/logout" class="btn btn-danger">Logout</a>
+        {%endif%}
+
+
+
+        <style>
+
+
+            body {
+                margin: 0;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #101316;
+                text-align: left;
+                background-color: rgb(245, 237, 237);
+                width: 400px; 
+                height: 150px; 
+                left: 30%; 
+                margin: -130px 0 0 -210px; 
+                padding:10px;
+                position: absolute; 
+                top: 30%; }
+              }
+              
+            </style>
+
+
+
+
+    </body>
+
+
+</html>

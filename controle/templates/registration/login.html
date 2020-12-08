@@ -1,0 +1,63 @@
+{%load crispy_forms_tags%}
+
+<html>
+    <head>
+        <title> Logar no Sistema</title>
+
+     
+    </head>
+    <body>
+<div class ="row">
+
+    <div class="col md-4 offset-md4"></div>
+    <div class="card auth-card">
+        <div class="card-body">
+            <h4 class="card-title text-center"> Logar no Sistema</h4>
+
+            <form method="POST">
+                {%csrf_token%}
+                <input type="hidden" name="next" value="{{next}}">
+
+                {{form|crispy}}
+
+                <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+
+
+            </form>
+
+            <style>
+
+
+            body {
+                margin: 0;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #101316;
+                text-align: left;
+                background-color: rgb(245, 237, 237);
+                width: 400px; 
+                height: 150px; 
+                left: 50%; 
+                margin: -130px 0 0 -210px; 
+                padding:10px;
+                position: absolute; 
+                top: 30%; }
+              }
+              
+            </style>
+                    
+        </div>
+
+    </div>
+</div>
+  
+
+       
+        </form>
+ 
+
+    </body>
+    
+</html>
